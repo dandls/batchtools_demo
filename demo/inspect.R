@@ -1,0 +1,6 @@
+library("batchtools")
+fls <- list.files("registry")
+fls_no <- which.max(as.numeric(gsub(pattern = "registry_", x = fls, replacement = "")))
+loadRegistry(file.path("registry", fls[fls_no]))
+print(getStatus())
+print(getErrorMessages())
